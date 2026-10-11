@@ -1,3 +1,11 @@
-    <h1>Contacto</h1>
-    <p>Email: contacto@uab.edu.bo</p>
-    <p>Teléfono: +591 4 0000000</p>
+{% extends "base.html" %}
+{% block titulo %}Contacto{% endblock %}
+
+{% block contenido %}
+<h1>Contacto</h1>
+<div class="card">
+    <p><strong>Email:</strong> contacto@uab.edu.bo</p>
+    <p><strong>Teléfono:</strong> +591 4 0000000</p>
+    <p><strong>Ubicación:</strong> Cochabamba, Bolivia</p>
+</div>
+{% endblock %}

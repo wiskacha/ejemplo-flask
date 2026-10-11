@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block titulo %}{% endblock %} | UAB Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a class="brand" href="{{ url_for('inicio') }}">UAB Flask</a>
+            <nav>
+                <a href="{{ url_for('inicio') }}" class="{{ 'activo' if request.endpoint == 'inicio' }}">Inicio</a>
+                <a href="{{ url_for('estudiantes') }}" class="{{ 'activo' if request.endpoint == 'estudiantes' }}">Estudiantes</a>
+                <a href="{{ url_for('contacto') }}" class="{{ 'activo' if request.endpoint == 'contacto' }}">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block contenido %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">© 2026 UAB · Proyecto Flask</div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

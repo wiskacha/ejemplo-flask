@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
-</head>
-<body>
-    <nav>
-        <a href="{{ url_for('inicio') }}">Inicio</a>
-        <a href="{{ url_for('estudiantes') }}">Estudiantes</a>
-        <a href="{{ url_for('contacto') }}">Contacto</a>
-    </nav>
+{% extends "base.html" %}
+{% block titulo %}Inicio{% endblock %}
+
+{% block contenido %}
+<section class="hero">
     <h1>Bienvenido a Flask</h1>
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-</body>
-</html>
+    <p>Aplicación de ejemplo para gestionar estudiantes.</p>
+    <a class="btn" href="{{ url_for('estudiantes') }}">Ver estudiantes</a>
+</section>
+{% endblock %}
